@@ -31,29 +31,6 @@ description: "Professional embroidery and custom printing services in Toronto. F
   }
 ] %}
 
-{% set whyChooseFeatures = [
-  {
-    title: "Fast Turnaround",
-    description: "Standard 7-10 day delivery with rush options available for urgent projects.",
-    icon: "⚡"
-  },
-  {
-    title: "Low Minimums",
-    description: "Starting at just 6 items - perfect for small businesses and teams.",
-    icon: "📦"
-  },
-  {
-    title: "Quality Guarantee",
-    description: "Professional-grade equipment and experienced team ensure consistent, high-quality results.",
-    icon: "✨"
-  },
-  {
-    title: "Nationwide Service",
-    description: "Based in Toronto with reliable shipping across Canada.",
-    icon: "🇨🇦"
-  }
-] %}
-
 {% set testimonials = [
   {
     text: "Outstanding embroidery work! The quality exceeded our expectations and the turnaround was incredibly fast.",
@@ -88,12 +65,18 @@ description: "Professional embroidery and custom printing services in Toronto. F
       <p class="body-text">Professional customization services with a focus on embroidery excellence</p>
     </div>
     
-    {% set feature_data = {
-      features: services,
-      columns: 4,
-      variant: "four-column"
-    } %}
-    {% include "components/content/feature-grid.njk" %}
+    <div class="services-grid">
+      {% for service in services %}
+        {% set card_data = {
+          title: service.title,
+          description: service.description,
+          icon: service.icon,
+          link: service.link,
+          variant: "light"
+        } %}
+        {% include "components/cards/service-card.njk" %}
+      {% endfor %}
+    </div>
   </div>
 </section>
 
@@ -104,12 +87,24 @@ description: "Professional embroidery and custom printing services in Toronto. F
       <p class="body-text">10+ years of experience delivering quality embroidery and printing solutions</p>
     </div>
     
-    {% set whyChoose_data = {
-      features: whyChooseFeatures,
-      columns: 4,
-      variant: "four-column"
-    } %}
-    {% include "components/content/feature-grid.njk" %}
+    <div class="reasons-grid">
+      <div class="reason-item card-dark">
+        <h3 class="heading-md">Fast Turnaround</h3>
+        <p class="body-text">Standard 7-10 day delivery with rush options available for urgent projects.</p>
+      </div>
+      <div class="reason-item card-dark">
+        <h3 class="heading-md">Low Minimums</h3>
+        <p class="body-text">Starting at just {{ site.business.minimumOrder }} items - perfect for small businesses and teams.</p>
+      </div>
+      <div class="reason-item card-dark">
+        <h3 class="heading-md">Quality Guarantee</h3>
+        <p class="body-text">Professional-grade equipment and experienced team ensure consistent, high-quality results.</p>
+      </div>
+      <div class="reason-item card-dark">
+        <h3 class="heading-md">Nationwide Service</h3>
+        <p class="body-text">{{ site.business.coverage }} with reliable shipping across Canada.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -143,16 +138,24 @@ description: "Professional embroidery and custom printing services in Toronto. F
 } %}
 {% include "components/cta/cta-primary.njk" %}
 
-{% set instagram_data = {
-  instagram_handle: "printsinajiffy",
-  title: "Follow Our Work",
-  subtitle: "See our latest embroidery and printing projects on Instagram @printsinajiffy",
-  max_posts: 6,
-  variant: "default"
-} %}
-{% include "components/social/instagram-feed.njk" %}
-
 <style>
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.reason-item {
+  text-align: center;
+  padding: 3rem 2rem; /* ADDED PADDING AS REQUESTED */
+}
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -161,67 +164,19 @@ description: "Professional embroidery and custom printing services in Toronto. F
 
 .testimonial-item {
   text-align: center;
-  padding: 3rem 2.5rem;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.06),
-    0 4px 16px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.testimonial-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.4), 
-    transparent
-  );
-  transition: left 0.6s ease;
-  z-index: 1;
-}
-
-.testimonial-item:hover::before {
-  left: 100%;
-}
-
-.testimonial-item:hover {
-  transform: translateY(-12px) scale(1.03);
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(30px);
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.12),
-    0 10px 30px rgba(0, 0, 0, 0.08),
-    0 0 30px rgba(220, 38, 38, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
-  border-color: rgba(220, 38, 38, 0.2);
+  padding: 3rem 2rem; /* ADDED PADDING AS REQUESTED */
 }
 
 .testimonial-text {
   font-style: italic;
   margin-bottom: 1.5rem;
   font-size: 1.125rem;
-  position: relative;
-  z-index: 2;
 }
 
 .testimonial-author {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  z-index: 2;
 }
 
 .testimonial-author strong {
@@ -239,22 +194,16 @@ description: "Professional embroidery and custom printing services in Toronto. F
   margin: 0 auto;
 }
 
-.section-dark .section-header h2,
-.section-dark .section-header p {
-  color: var(--white);
-}
-
-.section-dark .section-header p {
-  color: var(--light-gray);
-}
-
 @media (max-width: 768px) {
+  .services-grid,
+  .reasons-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
   
+  .reason-item,
   .testimonial-item {
-    padding: 2.5rem 2rem;
+    padding: 2.5rem 1.5rem; /* RESPONSIVE PADDING FOR MOBILE */
   }
 }
 </style>
