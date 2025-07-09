@@ -143,28 +143,31 @@ description: "Professional embroidery and custom printing services in Toronto. F
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  margin-top: 4rem; /* ADDED SPACING BETWEEN HEADER AND CARDS */
 }
 
 .reasons-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-}
-
-.reason-item {
-  text-align: center;
-  padding: 3rem 2rem; /* ADDED PADDING AS REQUESTED */
+  margin-top: 4rem; /* ADDED SPACING BETWEEN HEADER AND CARDS */
 }
 
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  margin-top: 4rem; /* ADDED SPACING BETWEEN HEADER AND CARDS */
+}
+
+.reason-item {
+  text-align: center;
+  padding: 3rem 2rem;
 }
 
 .testimonial-item {
   text-align: center;
-  padding: 3rem 2rem; /* ADDED PADDING AS REQUESTED */
+  padding: 3rem 2rem;
 }
 
 .testimonial-text {
@@ -199,11 +202,12 @@ description: "Professional embroidery and custom printing services in Toronto. F
   .reasons-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
+    margin-top: 3rem; /* SLIGHTLY LESS SPACING ON MOBILE */
   }
   
   .reason-item,
   .testimonial-item {
-    padding: 2.5rem 1.5rem; /* RESPONSIVE PADDING FOR MOBILE */
+    padding: 2.5rem 1.5rem;
   }
 }
 </style>
