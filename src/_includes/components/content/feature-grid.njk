@@ -1,0 +1,95 @@
+{# Component: Feature Grid #}
+{# Description: Grid layout for features/services #}
+{# Props: features, columns #}
+{# Variants: three-column, four-column #}
+{# Lines: 75 #}
+
+{% set component_data = {
+  features: features or [],
+  columns: columns or 3,
+  variant: variant or "three-column"
+} %}
+
+<section class="feature-grid variant-{{ component_data.variant }}">
+    <div class="container">
+        <div class="grid-container columns-{{ component_data.columns }}">
+            {% for feature in component_data.features %}
+            <div class="feature-item card-light">
+                {% if feature.icon %}
+                <div class="feature-icon">
+                    {{ feature.icon | safe }}
+                </div>
+                {% endif %}
+                
+                <h3 class="heading-md">{{ feature.title }}</h3>
+                <p class="body-text">{{ feature.description }}</p>
+                
+                {% if feature.link %}
+                <a href="{{ feature.link.url }}" class="feature-link">
+                    {{ feature.link.text or "Learn More" }}
+                </a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<style>
+.feature-grid {
+    padding: 4rem 0;
+}
+
+.grid-container {
+    display: grid;
+    gap: 2rem;
+}
+
+.grid-container.columns-3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-container.columns-4 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.feature-item {
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--red-accent);
+}
+
+.feature-item h3 {
+    margin-bottom: 1rem;
+}
+
+.feature-item p {
+    margin-bottom: 1.5rem;
+}
+
+.feature-link {
+    color: var(--red-accent);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.feature-link:hover {
+    color: var(--black);
+}
+
+@media (max-width: 768px) {
+    .grid-container.columns-3,
+    .grid-container.columns-4 {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

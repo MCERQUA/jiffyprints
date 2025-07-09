@@ -1,0 +1,129 @@
+{# Component: Navigation Bar #}
+{# Description: Main site navigation with logo and menu #}
+{# Props: current_page #}
+{# Variants: desktop, mobile #}
+{# Lines: 85 #}
+
+{% set current = page.url %}
+
+<nav class="navbar">
+    <div class="container nav-content">
+        <a href="/" class="logo">{{ site.title }}</a>
+        
+        <!-- Desktop Navigation -->
+        <ul class="nav-links">
+            {% for item in navigation.primary %}
+            <li>
+                <a href="{{ item.url }}" 
+                   class="nav-link{% if current == item.url %} nav-link-active{% endif %}">
+                    {{ item.text }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        
+        <!-- CTA Button -->
+        <a href="{{ navigation.cta.url }}" class="{{ navigation.cta.class }}">
+            {{ navigation.cta.text }}
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-links">
+            {% for item in navigation.primary %}
+            <li>
+                <a href="{{ item.url }}" 
+                   class="mobile-nav-link{% if current == item.url %} mobile-nav-link-active{% endif %}">
+                    {{ item.text }}
+                </a>
+            </li>
+            {% endfor %}
+            <li class="mobile-cta">
+                <a href="{{ navigation.cta.url }}" class="{{ navigation.cta.class }}">
+                    {{ navigation.cta.text }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<style>
+.nav-link-active {
+    color: var(--black) !important;
+    font-weight: 600;
+}
+
+.nav-link-active::before {
+    width: 100% !important;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--black);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu {
+    display: none;
+    background: var(--white);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-medium);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--medium-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link-active {
+    color: var(--black);
+    background: var(--very-light-gray);
+}
+
+.mobile-cta {
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .mobile-menu.active {
+        display: block;
+    }
+}
+</style>

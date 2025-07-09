@@ -1,0 +1,73 @@
+{# Component: Primary CTA #}
+{# Description: Primary call-to-action section #}
+{# Props: title, description, button_text, button_link #}
+{# Variants: default, quote-focused #}
+{# Lines: 65 #}
+
+{% set component_data = {
+  title: cta_data.title or title or "Ready to Start Your Project?",
+  description: cta_data.description or description or "Get a free quote today and see how we can bring your vision to life with professional embroidery and printing services.",
+  button_text: cta_data.button_text or button_text or "Get Free Quote",
+  button_link: cta_data.button_link or button_link or "/quote/",
+  variant: cta_data.variant or variant or "default"
+} %}
+
+<section class="cta-primary variant-{{ component_data.variant }} section-dark">
+    <div class="container">
+        <div class="cta-content">
+            {% if component_data.variant == "quote-focused" %}
+                <h2 class="heading-lg">{{ component_data.title | default("Get Your Custom Embroidery Quote") }}</h2>
+                <p class="cta-description">{{ component_data.description | default("Professional embroidery services with fast turnaround. Upload your design and get a personalized quote within 24 hours.") }}</p>
+            {% else %}
+                <h2 class="heading-lg">{{ component_data.title }}</h2>
+                <p class="cta-description">{{ component_data.description }}</p>
+            {% endif %}
+            
+            <a href="{{ component_data.button_link }}" class="btn btn-primary">
+                {{ component_data.button_text }}
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+.cta-primary {
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(-45deg, transparent, var(--red-glow-subtle));
+    opacity: 0.3;
+    transform: skewX(15deg);
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-description {
+    font-size: 1.125rem;
+    color: var(--light-gray);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .cta-primary {
+        padding: 3rem 0;
+    }
+}
+</style>

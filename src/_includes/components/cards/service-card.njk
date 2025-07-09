@@ -1,0 +1,71 @@
+{# Component: Service Card #}
+{# Description: Individual service showcase card #}
+{# Props: title, description, icon, link #}
+{# Variants: light, dark #}
+{# Lines: 60 #}
+
+{% set component_data = {
+  title: card_data.title or title or "Service Title",
+  description: card_data.description or description or "Service description",
+  icon: card_data.icon or icon or "🎯",
+  link: card_data.link or link or null,
+  variant: card_data.variant or variant or "light"
+} %}
+
+<div class="service-card variant-{{ component_data.variant }} {% if component_data.variant == 'dark' %}card-dark{% else %}card-light{% endif %}">
+    <div class="service-icon">
+        {{ component_data.icon | safe }}
+    </div>
+    
+    <h3 class="heading-md">{{ component_data.title }}</h3>
+    <p class="body-text">{{ component_data.description }}</p>
+    
+    {% if component_data.link %}
+    <a href="{{ component_data.link.url }}" class="service-link">
+        {{ component_data.link.text or "Learn More" }}
+    </a>
+    {% endif %}
+</div>
+
+<style>
+.service-card {
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--red-accent);
+}
+
+.service-card h3 {
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    margin-bottom: 1.5rem;
+}
+
+.service-link {
+    color: var(--red-accent);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.service-link:hover {
+    color: var(--black);
+}
+
+.variant-dark .service-link {
+    color: var(--white);
+}
+
+.variant-dark .service-link:hover {
+    color: var(--red-accent);
+}
+</style>

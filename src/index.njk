@@ -1,0 +1,202 @@
+---
+layout: layouts/page.njk
+title: "Professional Embroidery & Custom Printing Services"
+description: "Professional embroidery and custom printing services in Toronto. Fast turnaround, quality guaranteed, low minimums starting at 6 items."
+---
+
+{% set services = [
+  {
+    title: "Professional Embroidery",
+    description: "Durable thread-based designs perfect for logos and text on hats, jackets, and polos. Our commercial-grade machines deliver precision results.",
+    icon: "🧵",
+    link: { url: "/embroidery/", text: "Explore Embroidery" }
+  },
+  {
+    title: "DTF Printing",
+    description: "Vivid, full-color designs with no color limits. Heat-pressed for soft, lasting finish on cotton and polyester.",
+    icon: "🎨",
+    link: { url: "/printing/", text: "Learn More" }
+  },
+  {
+    title: "DTG Printing",
+    description: "Direct-to-garment printing for detailed, full-color designs. Soft feel with excellent washability for small batches.",
+    icon: "👕",
+    link: { url: "/printing/", text: "Learn More" }
+  },
+  {
+    title: "Screen Printing",
+    description: "Cost-effective solution for larger orders. Top-quality inks ensure durable prints for team uniforms and promotional gear.",
+    icon: "🖨️",
+    link: { url: "/printing/", text: "Learn More" }
+  }
+] %}
+
+{% set testimonials = [
+  {
+    text: "Outstanding embroidery work! The quality exceeded our expectations and the turnaround was incredibly fast.",
+    author: "Sarah Mitchell",
+    company: "Toronto Sports Club"
+  },
+  {
+    text: "Professional service from start to finish. Their attention to detail in logo embroidery is exceptional.",
+    author: "Mike Johnson",
+    company: "Corporate Solutions Inc."
+  },
+  {
+    text: "Been using Jiffyprints for 3 years. Consistently high quality and great customer service.",
+    author: "Lisa Chen",
+    company: "Event Planning Plus"
+  }
+] %}
+
+{% set hero_data = {
+  title: "Professional Embroidery & Custom Printing",
+  subtitle: "Fast turnaround, quality guaranteed, serving Toronto and all of Canada with embroidery expertise since 2014.",
+  variant: "embroidery-focused",
+  cta_primary: { text: "Get Free Quote", url: "/quote/" },
+  cta_secondary: { text: "View Our Work", url: "/embroidery/" }
+} %}
+{% include "components/hero/hero-main.njk" %}
+
+<section class="services-section section-light">
+  <div class="container">
+    <div class="section-header text-center mb-12">
+      <h2 class="heading-lg">Our Services</h2>
+      <p class="body-text">Professional customization services with a focus on embroidery excellence</p>
+    </div>
+    
+    <div class="services-grid">
+      {% for service in services %}
+        {% set card_data = {
+          title: service.title,
+          description: service.description,
+          icon: service.icon,
+          link: service.link,
+          variant: "light"
+        } %}
+        {% include "components/cards/service-card.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="why-choose-section section-dark">
+  <div class="container">
+    <div class="section-header text-center mb-12">
+      <h2 class="heading-lg">Why Choose Jiffyprints?</h2>
+      <p class="body-text">10+ years of experience delivering quality embroidery and printing solutions</p>
+    </div>
+    
+    <div class="reasons-grid">
+      <div class="reason-item card-dark">
+        <h3 class="heading-md">Fast Turnaround</h3>
+        <p class="body-text">Standard 7-10 day delivery with rush options available for urgent projects.</p>
+      </div>
+      <div class="reason-item card-dark">
+        <h3 class="heading-md">Low Minimums</h3>
+        <p class="body-text">Starting at just {{ site.business.minimumOrder }} items - perfect for small businesses and teams.</p>
+      </div>
+      <div class="reason-item card-dark">
+        <h3 class="heading-md">Quality Guarantee</h3>
+        <p class="body-text">Professional-grade equipment and experienced team ensure consistent, high-quality results.</p>
+      </div>
+      <div class="reason-item card-dark">
+        <h3 class="heading-md">Nationwide Service</h3>
+        <p class="body-text">{{ site.business.coverage }} with reliable shipping across Canada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section section-light">
+  <div class="container">
+    <div class="section-header text-center mb-12">
+      <h2 class="heading-lg">What Our Customers Say</h2>
+      <p class="body-text">Trusted by businesses across Canada for quality embroidery and printing</p>
+    </div>
+    
+    <div class="testimonials-grid">
+      {% for testimonial in testimonials %}
+      <div class="testimonial-item card-light">
+        <p class="testimonial-text">"{{ testimonial.text }}"</p>
+        <div class="testimonial-author">
+          <strong>{{ testimonial.author }}</strong>
+          <span>{{ testimonial.company }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% set cta_data = {
+  title: "Ready to Start Your Project?",
+  description: "Get a free quote today and see how we can bring your vision to life with professional embroidery and printing services.",
+  button_text: "Get Free Quote",
+  button_link: "/quote/",
+  variant: "quote-focused"
+} %}
+{% include "components/cta/cta-primary.njk" %}
+
+<style>
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.reason-item {
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-item {
+  text-align: center;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-author strong {
+  color: var(--black);
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-author span {
+  color: var(--light-gray);
+  font-size: 0.875rem;
+}
+
+.section-header {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .services-grid,
+  .reasons-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

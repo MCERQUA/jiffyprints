@@ -1,0 +1,266 @@
+---
+layout: layouts/page.njk
+title: "Contact Us"
+description: "Get in touch with Jiffyprints for embroidery and printing services. Phone, email, and contact form available."
+---
+
+{% set hero_data = {
+  title: "Contact Us",
+  subtitle: "Ready to discuss your embroidery or printing project? We're here to help!"
+} %}
+{% include "components/hero/hero-simple.njk" %}
+
+<section class="contact-info section-light">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-methods">
+        <h2 class="heading-lg">Get in Touch</h2>
+        <p class="body-text">We'd love to hear about your project and help bring your vision to life. Choose the method that works best for you:</p>
+        
+        <div class="contact-cards">
+          <div class="contact-card card-light">
+            <div class="contact-icon">📞</div>
+            <h3 class="heading-md">Phone</h3>
+            <p class="contact-detail">{{ site.phone }}</p>
+            <p class="contact-hours">Mon-Fri: 9AM-6PM EST</p>
+          </div>
+          
+          <div class="contact-card card-light">
+            <div class="contact-icon">📧</div>
+            <h3 class="heading-md">Email</h3>
+            <p class="contact-detail">{{ site.email }}</p>
+            <p class="contact-hours">Response within 24 hours</p>
+          </div>
+          
+          <div class="contact-card card-light">
+            <div class="contact-icon">📍</div>
+            <h3 class="heading-md">Address</h3>
+            <p class="contact-detail">
+              {{ site.address.street }}<br>
+              {{ site.address.city }}, {{ site.address.province }}<br>
+              {{ site.address.postal }}
+            </p>
+            <p class="contact-hours">By appointment only</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-wrapper">
+        {% include "components/forms/contact-form.njk" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="business-hours section-dark">
+  <div class="container">
+    <div class="hours-content">
+      <div class="hours-info">
+        <h2 class="heading-lg">Business Hours</h2>
+        <p class="body-text">We're available during regular business hours for phone calls and in-person consultations. Email inquiries are answered within 24 hours.</p>
+        
+        <div class="hours-table">
+          <div class="hours-row">
+            <span class="day">Monday - Friday</span>
+            <span class="time">9:00 AM - 6:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="day">Saturday</span>
+            <span class="time">10:00 AM - 4:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="day">Sunday</span>
+            <span class="time">Closed</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="response-info">
+        <h3 class="heading-md">Response Times</h3>
+        <ul class="response-list">
+          <li><strong>Phone:</strong> Immediate during business hours</li>
+          <li><strong>Email:</strong> Within 24 hours</li>
+          <li><strong>Quote Requests:</strong> Within 24 hours</li>
+          <li><strong>Rush Projects:</strong> Same day response</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section section-light">
+  <div class="container">
+    <div class="section-header text-center mb-12">
+      <h2 class="heading-lg">Frequently Asked Questions</h2>
+      <p class="body-text">Quick answers to common questions about our services</p>
+    </div>
+    
+    <div class="faq-grid">
+      <div class="faq-item card-light">
+        <h3 class="heading-md">What's your minimum order?</h3>
+        <p class="body-text">Our minimum order is {{ site.business.minimumOrder }} items for most services. This low minimum makes us perfect for small businesses and teams.</p>
+      </div>
+      
+      <div class="faq-item card-light">
+        <h3 class="heading-md">How long does production take?</h3>
+        <p class="body-text">Standard turnaround is 7-10 business days. We also offer rush services for 3-5 days and urgent service for 1-2 days.</p>
+      </div>
+      
+      <div class="faq-item card-light">
+        <h3 class="heading-md">Do you ship across Canada?</h3>
+        <p class="body-text">Yes! We ship nationwide from our Toronto location. Shipping costs are calculated based on order size and destination.</p>
+      </div>
+      
+      <div class="faq-item card-light">
+        <h3 class="heading-md">What file formats do you accept?</h3>
+        <p class="body-text">We accept JPG, PNG, PDF, AI, and EPS files. Vector formats are preferred for embroidery. We also offer digitizing services.</p>
+      </div>
+      
+      <div class="faq-item card-light">
+        <h3 class="heading-md">Can I see a sample before full production?</h3>
+        <p class="body-text">Yes! We create samples for approval before starting full production to ensure you're happy with the results.</p>
+      </div>
+      
+      <div class="faq-item card-light">
+        <h3 class="heading-md">Do you offer pickup in Toronto?</h3>
+        <p class="body-text">Yes, local pickup is available by appointment. This can save on shipping costs for Toronto-area customers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-methods h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-methods p {
+  margin-bottom: 2rem;
+}
+
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+  margin-bottom: 1rem;
+}
+
+.contact-detail {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.contact-hours {
+  font-size: 0.875rem;
+  color: var(--light-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hours-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.hours-table {
+  margin-top: 2rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.day {
+  font-weight: 600;
+}
+
+.time {
+  color: var(--light-gray);
+}
+
+.response-info {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.response-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.response-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.response-list li:last-child {
+  border-bottom: none;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.faq-item {
+  padding: 2rem;
+}
+
+.faq-item h3 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .hours-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

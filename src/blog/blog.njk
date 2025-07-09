@@ -1,0 +1,227 @@
+---
+layout: layouts/page.njk
+title: "Blog"
+description: "Embroidery tips, design ideas, and industry insights from the Jiffyprints team. Stay updated on the latest trends and techniques."
+---
+
+{% set hero_data = {
+  title: "Jiffyprints Blog",
+  subtitle: "Embroidery tips, design ideas, and industry insights to help you make the most of your custom apparel projects."
+} %}
+{% include "components/hero/hero-simple.njk" %}
+
+<section class="blog-content section-light">
+  <div class="container">
+    <div class="blog-grid">
+      <div class="blog-posts">
+        {% if collections.posts.length > 0 %}
+          {% for post in collections.posts %}
+            {% set card_data = {
+              title: post.data.title,
+              excerpt: post.data.description or post.content,
+              date: post.data.date,
+              link: post.url,
+              variant: "featured" if loop.first else "standard"
+            } %}
+            {% include "components/cards/blog-card.njk" %}
+          {% endfor %}
+        {% else %}
+          <div class="no-posts">
+            <h2 class="heading-lg">Coming Soon!</h2>
+            <p class="body-text">We're working on creating helpful content about embroidery, printing, and design. Check back soon for our latest posts!</p>
+          </div>
+        {% endif %}
+      </div>
+      
+      <div class="blog-sidebar">
+        <div class="sidebar-section card-light">
+          <h3 class="heading-md">Categories</h3>
+          <ul class="category-list">
+            <li><a href="/blog/embroidery-tips/">Embroidery Tips</a></li>
+            <li><a href="/blog/design-ideas/">Design Ideas</a></li>
+            <li><a href="/blog/industry-insights/">Industry Insights</a></li>
+            <li><a href="/blog/customer-stories/">Customer Stories</a></li>
+          </ul>
+        </div>
+        
+        <div class="sidebar-section card-light">
+          <h3 class="heading-md">Popular Posts</h3>
+          <ul class="popular-posts">
+            <li><a href="/blog/embroidery-vs-printing/">Embroidery vs. Printing: Which is Right for Your Project?</a></li>
+            <li><a href="/blog/logo-embroidery-tips/">5 Tips for Perfect Logo Embroidery</a></li>
+            <li><a href="/blog/thread-color-guide/">Choosing the Right Thread Colors</a></li>
+          </ul>
+        </div>
+        
+        <div class="sidebar-section card-light">
+          <h3 class="heading-md">Stay Updated</h3>
+          <p class="body-text">Get notified when we publish new embroidery tips and industry insights.</p>
+          <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true">
+            <input type="email" name="email" placeholder="Your email address" class="form-input" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-topics section-dark">
+  <div class="container">
+    <div class="section-header text-center mb-12">
+      <h2 class="heading-lg">What We Write About</h2>
+      <p class="body-text">Our blog covers everything you need to know about embroidery and custom printing</p>
+    </div>
+    
+    <div class="topics-grid">
+      <div class="topic-item card-dark">
+        <div class="topic-icon">🧵</div>
+        <h3 class="heading-md">Embroidery Techniques</h3>
+        <p class="body-text">Learn about different embroidery techniques, thread types, and best practices for professional results.</p>
+      </div>
+      
+      <div class="topic-item card-dark">
+        <div class="topic-icon">🎨</div>
+        <h3 class="heading-md">Design Tips</h3>
+        <p class="body-text">Get insights on creating designs that work well for embroidery and printing, including color choices and sizing.</p>
+      </div>
+      
+      <div class="topic-item card-dark">
+        <div class="topic-icon">💡</div>
+        <h3 class="heading-md">Industry Insights</h3>
+        <p class="body-text">Stay updated on industry trends, new technologies, and changes in the custom apparel market.</p>
+      </div>
+      
+      <div class="topic-item card-dark">
+        <div class="topic-icon">📈</div>
+        <h3 class="heading-md">Business Tips</h3>
+        <p class="body-text">Learn how custom apparel can benefit your business, from employee uniforms to promotional merchandise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set cta_data = {
+  title: "Have a Question?",
+  description: "Don't see what you're looking for? Contact us and we might write about it in our next blog post!",
+  button_text: "Contact Us",
+  button_link: "/contact/"
+} %}
+{% include "components/cta/cta-primary.njk" %}
+
+<style>
+.blog-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.blog-posts {
+  display: grid;
+  gap: 2rem;
+}
+
+.no-posts {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--very-light-gray);
+  border-radius: 12px;
+}
+
+.blog-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-section {
+  padding: 2rem;
+}
+
+.sidebar-section h3 {
+  margin-bottom: 1rem;
+}
+
+.category-list,
+.popular-posts {
+  list-style: none;
+  padding: 0;
+}
+
+.category-list li,
+.popular-posts li {
+  margin-bottom: 0.75rem;
+}
+
+.category-list a,
+.popular-posts a {
+  color: var(--medium-gray);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.category-list a:hover,
+.popular-posts a:hover {
+  color: var(--red-accent);
+}
+
+.popular-posts a {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.newsletter-form .form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.newsletter-form .btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.topic-item {
+  text-align: center;
+}
+
+.topic-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .blog-sidebar {
+    order: -1;
+  }
+  
+  .sidebar-section {
+    padding: 1.5rem;
+  }
+  
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

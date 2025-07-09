@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Jiffyprints</title>
+    <meta name="description" content="Get in touch with Jiffyprints for embroidery and printing services. Phone, email, and contact form available.">
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Meta tags for SEO -->
+    <meta property="og:title" content="Contact Us | Jiffyprints">
+    <meta property="og:description" content="Get in touch with Jiffyprints for embroidery and printing services. Phone, email, and contact form available.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jiffyprints.netlify.app/pages/contact/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jiffyprints.netlify.app/pages/contact/">
+</head>
+<body>
+    
+
+
+
+
+
+
+
+<nav class="navbar">
+    <div class="container nav-content">
+        <a href="/" class="logo">Jiffyprints</a>
+        
+        <!-- Desktop Navigation -->
+        <ul class="nav-links">
+            
+            <li>
+                <a href="/" 
+                   class="nav-link">
+                    Home
+                </a>
+            </li>
+            
+            <li>
+                <a href="/embroidery/" 
+                   class="nav-link">
+                    Embroidery
+                </a>
+            </li>
+            
+            <li>
+                <a href="/printing/" 
+                   class="nav-link">
+                    Printing
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog/" 
+                   class="nav-link">
+                    Blog
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about/" 
+                   class="nav-link">
+                    About
+                </a>
+            </li>
+            
+            <li>
+                <a href="/contact/" 
+                   class="nav-link">
+                    Contact
+                </a>
+            </li>
+            
+        </ul>
+        
+        <!-- CTA Button -->
+        <a href="/quote/" class="btn btn-primary">
+            Get Quote
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-links">
+            
+            <li>
+                <a href="/" 
+                   class="mobile-nav-link">
+                    Home
+                </a>
+            </li>
+            
+            <li>
+                <a href="/embroidery/" 
+                   class="mobile-nav-link">
+                    Embroidery
+                </a>
+            </li>
+            
+            <li>
+                <a href="/printing/" 
+                   class="mobile-nav-link">
+                    Printing
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog/" 
+                   class="mobile-nav-link">
+                    Blog
+                </a>
+            </li>
+            
+            <li>
+                <a href="/about/" 
+                   class="mobile-nav-link">
+                    About
+                </a>
+            </li>
+            
+            <li>
+                <a href="/contact/" 
+                   class="mobile-nav-link">
+                    Contact
+                </a>
+            </li>
+            
+            <li class="mobile-cta">
+                <a href="/quote/" class="btn btn-primary">
+                    Get Quote
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<style>
+.nav-link-active {
+    color: var(--black) !important;
+    font-weight: 600;
+}
+
+.nav-link-active::before {
+    width: 100% !important;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--black);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu {
+    display: none;
+    background: var(--white);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-medium);
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 1rem 0;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--medium-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link-active {
+    color: var(--black);
+    background: var(--very-light-gray);
+}
+
+.mobile-cta {
+    padding: 1rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .mobile-menu.active {
+        display: block;
+    }
+}
+</style>
+    
+    <main>
+        
+
+
+
+
+
+
+
+
+
+
+<section class="hero-simple variant-default">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="heading-lg">Contact Us</h1>
+            
+            <p class="hero-subtitle">Ready to discuss your embroidery or printing project? We&#39;re here to help!</p>
+            
+        </div>
+    </div>
+</section>
+
+<style>
+.hero-simple {
+    background: var(--white);
+    padding: 4rem 0 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.hero-simple::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red-accent), transparent);
+    transform: translateX(-50%);
+}
+
+.hero-simple .hero-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-simple .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--medium-gray);
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .hero-simple {
+        padding: 3rem 0 1.5rem;
+    }
+}
+</style>
+
+<section class="contact-info section-light">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-methods">
+        <h2 class="heading-lg">Get in Touch</h2>
+        <p class="body-text">We'd love to hear about your project and help bring your vision to life. Choose the method that works best for you:</p>
+        
+        <div class="contact-cards">
+          <div class="contact-card card-light">
+            <div class="contact-icon">📞</div>
+            <h3 class="heading-md">Phone</h3>
+            <p class="contact-detail">(416) 555-0123</p>
+            <p class="contact-hours">Mon-Fri: 9AM-6PM EST</p>
+          </div>
+          
+          <div class="contact-card card-light">
+            <div class="contact-icon">📧</div>
+            <h3 class="heading-md">Email</h3>
+            <p class="contact-detail">info@jiffyprints.com</p>
+            <p class="contact-hours">Response within 24 hours</p>
+          </div>
+          
+          <div class="contact-card card-light">
+            <div class="contact-icon">📍</div>
+            <h3 class="heading-md">Address</h3>
+            <p class="contact-detail">
+              123 Business Street<br>
+              Toronto, Ontario<br>
+              M5V 3N1
+            </p>
+            <p class="contact-hours">By appointment only</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-wrapper">
+        
+
+
+
+
+
+
+
+<section class="contact-form-section">
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="form-intro">
+                <h2 class="heading-md">Get in Touch</h2>
+                <p class="body-text">Have a question about our services? Want to discuss a custom project? We're here to help!</p>
+            </div>
+            
+            <form class="contact-form" name="contact" method="POST" data-netlify="true">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact-name" class="form-label">Full Name *</label>
+                        <input type="text" id="contact-name" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email" class="form-label">Email Address *</label>
+                        <input type="email" id="contact-email" name="email" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-phone" class="form-label">Phone Number</label>
+                    <input type="tel" id="contact-phone" name="phone" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-subject" class="form-label">Subject *</label>
+                    <select id="contact-subject" name="subject" class="form-input" required>
+                        <option value="">Select a subject...</option>
+                        <option value="general-inquiry">General Inquiry</option>
+                        <option value="embroidery-question">Embroidery Question</option>
+                        <option value="printing-question">Printing Question</option>
+                        <option value="existing-order">Existing Order</option>
+                        <option value="partnership">Partnership Opportunity</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-message" class="form-label">Message *</label>
+                    <textarea id="contact-message" name="message" class="form-input" rows="5" required placeholder="Tell us how we can help you..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary form-submit">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<style>
+.contact-form-section {
+    padding: 4rem 0;
+}
+
+.contact-form-section .form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form-section .form-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-form {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-large);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-submit {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .contact-form {
+        padding: 2rem;
+    }
+}
+</style>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="business-hours section-dark">
+  <div class="container">
+    <div class="hours-content">
+      <div class="hours-info">
+        <h2 class="heading-lg">Business Hours</h2>
+        <p class="body-text">We're available during regular business hours for phone calls and in-person consultations. Email inquiries are answered within 24 hours.</p>
+        
+        <div class="hours-table">
+          <div class="hours-row">
+            <span class="day">Monday - Friday</span>
+            <span class="time">9:00 AM - 6:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="day">Saturday</span>
+            <span class="time">10:00 AM - 4:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="day">Sunday</span>
+            <span class="time">Closed</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="response-info">
+        <h3 class="heading-md">Response Times</h3>
+        <ul class="response-list">
+          <li><strong>Phone:</strong> Immediate during business hours</li>
+          <li><strong>Email:</strong> Within 24 hours</li>
+          <li><strong>Quote Requests:</strong> Within 24 hours</li>
+          <li><strong>Rush Projects:</strong> Same day response</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section section-light">
+  <div class="container">
+    <div class="section-header text-center mb-12">
+      <h2 class="heading-lg">Frequently Asked Questions</h2>
+      <p class="body-text">Quick answers to common questions about our services</p>
+    </div>
+    
+    <div class="faq-grid">
+      <div class="faq-item card-light">
+        <h3 class="heading-md">What's your minimum order?</h3>
+        <p class="body-text">Our minimum order is 6 items for most services. This low minimum makes us perfect for small businesses and teams.</p>
+      </div>
+      
+      <div class="faq-item card-light">
+        <h3 class="heading-md">How long does production take?</h3>
+        <p class="body-text">Standard turnaround is 7-10 business days. We also offer rush services for 3-5 days and urgent service for 1-2 days.</p>
+      </div>
+      
+      <div class="faq-item card-light">
+        <h3 class="heading-md">Do you ship across Canada?</h3>
+        <p class="body-text">Yes! We ship nationwide from our Toronto location. Shipping costs are calculated based on order size and destination.</p>
+      </div>
+      
+      <div class="faq-item card-light">
+        <h3 class="heading-md">What file formats do you accept?</h3>
+        <p class="body-text">We accept JPG, PNG, PDF, AI, and EPS files. Vector formats are preferred for embroidery. We also offer digitizing services.</p>
+      </div>
+      
+      <div class="faq-item card-light">
+        <h3 class="heading-md">Can I see a sample before full production?</h3>
+        <p class="body-text">Yes! We create samples for approval before starting full production to ensure you're happy with the results.</p>
+      </div>
+      
+      <div class="faq-item card-light">
+        <h3 class="heading-md">Do you offer pickup in Toronto?</h3>
+        <p class="body-text">Yes, local pickup is available by appointment. This can save on shipping costs for Toronto-area customers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-methods h2 {
+  margin-bottom: 1rem;
+}
+
+.contact-methods p {
+  margin-bottom: 2rem;
+}
+
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+  margin-bottom: 1rem;
+}
+
+.contact-detail {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.contact-hours {
+  font-size: 0.875rem;
+  color: var(--light-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hours-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.hours-table {
+  margin-top: 2rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.day {
+  font-weight: 600;
+}
+
+.time {
+  color: var(--light-gray);
+}
+
+.response-info {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.response-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.response-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.response-list li:last-child {
+  border-bottom: none;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.faq-item {
+  padding: 2rem;
+}
+
+.faq-item h3 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .hours-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+    </main>
+    
+    
+
+
+
+
+
+<footer class="site-footer section-dark">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">Jiffyprints</h3>
+                <p class="footer-description">Professional embroidery and custom printing services in Toronto. Fast turnaround, quality guaranteed, low minimums starting at 6 items.</p>
+                
+                <div class="footer-social">
+                    
+                    <a href="https://facebook.com/jiffyprints" class="social-link" aria-label="Facebook">
+                        📘
+                        
+                        
+                    </a>
+                    
+                    <a href="https://instagram.com/jiffyprints" class="social-link" aria-label="Instagram">
+                        
+                        📷
+                        
+                    </a>
+                    
+                    <a href="https://linkedin.com/company/jiffyprints" class="social-link" aria-label="Linkedin">
+                        
+                        
+                        💼
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-heading">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="/embroidery/">Embroidery</a></li>
+                    <li><a href="/printing/">DTF Printing</a></li>
+                    <li><a href="/printing/">DTG Printing</a></li>
+                    <li><a href="/printing/">Screen Printing</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-heading">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/quote/">Get Quote</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-heading">Contact Info</h4>
+                <div class="contact-info">
+                    <p><strong>Phone:</strong> (416) 555-0123</p>
+                    <p><strong>Email:</strong> info@jiffyprints.com</p>
+                    <p><strong>Address:</strong><br>
+                        123 Business Street<br>
+                        Toronto, Ontario<br>
+                        M5V 3N1
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Jiffyprints. All rights reserved.</p>
+            <p>Serving Toronto-based serving all of Canada since 2014</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+.site-footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+}
+
+.footer-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.footer-heading {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.footer-description {
+    color: var(--light-gray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--light-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.contact-info p {
+    color: var(--light-gray);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+    color: var(--light-gray);
+}
+
+.footer-bottom p {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .site-footer {
+        padding: 3rem 0 1.5rem;
+    }
+}
+</style>
+    
+    <!-- Basic JavaScript for interactions -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

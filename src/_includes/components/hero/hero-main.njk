@@ -1,0 +1,136 @@
+{# Component: Main Hero #}
+{# Description: Large hero section with CTA buttons #}
+{# Props: title, subtitle, cta_primary, cta_secondary #}
+{# Variants: default, embroidery-focused #}
+{# Lines: 95 #}
+
+{% set component_data = {
+  title: hero_data.title or title or "Professional Embroidery & Custom Printing",
+  subtitle: hero_data.subtitle or subtitle or "Fast turnaround, quality guaranteed, serving Toronto and all of Canada with embroidery expertise since 2014.",
+  variant: hero_data.variant or variant or "default",
+  cta_primary: hero_data.cta_primary or cta_primary or { text: "Get Quote", url: "/quote/" },
+  cta_secondary: hero_data.cta_secondary or cta_secondary or { text: "View Embroidery", url: "/embroidery/" }
+} %}
+
+<section class="hero-main variant-{{ component_data.variant }}">
+    <div class="container">
+        <div class="hero-content">
+            {% if component_data.variant == "embroidery-focused" %}
+                <h1 class="heading-xl">{{ component_data.title | default("Expert Embroidery Services in Toronto") }}</h1>
+                <p class="hero-subtitle">{{ component_data.subtitle | default("Professional logo embroidery, custom designs, and fast turnaround times. Serving businesses across Canada with quality you can trust.") }}</p>
+            {% else %}
+                <h1 class="heading-xl">{{ component_data.title }}</h1>
+                <p class="hero-subtitle">{{ component_data.subtitle }}</p>
+            {% endif %}
+            
+            <div class="hero-cta">
+                <a href="{{ component_data.cta_primary.url }}" class="btn btn-primary">
+                    {{ component_data.cta_primary.text }}
+                </a>
+                <a href="{{ component_data.cta_secondary.url }}" class="btn btn-secondary">
+                    {{ component_data.cta_secondary.text }}
+                </a>
+            </div>
+            
+            <div class="hero-highlights">
+                <div class="highlight-item">
+                    <strong>{{ site.business.minimumOrder }}+</strong>
+                    <span>Item Minimum</span>
+                </div>
+                <div class="highlight-item">
+                    <strong>10+</strong>
+                    <span>Years Experience</span>
+                </div>
+                <div class="highlight-item">
+                    <strong>Fast</strong>
+                    <span>Turnaround</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.hero-main {
+    background: linear-gradient(135deg, var(--very-light-gray) 0%, var(--white) 100%);
+    padding: 6rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -20%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, var(--red-glow-subtle));
+    opacity: 0.5;
+    transform: skewX(-15deg);
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--medium-gray);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.hero-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.highlight-item {
+    text-align: center;
+}
+
+.highlight-item strong {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.25rem;
+}
+
+.highlight-item span {
+    font-size: 0.875rem;
+    color: var(--medium-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .hero-main {
+        padding: 4rem 0 3rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-highlights {
+        gap: 2rem;
+    }
+}
+</style>

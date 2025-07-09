@@ -1,0 +1,270 @@
+---
+layout: layouts/page.njk
+title: "About Us"
+description: "Learn about Jiffyprints' story, values, and commitment to quality embroidery and printing services since 2014."
+---
+
+{% set hero_data = {
+  title: "About Jiffyprints",
+  subtitle: "Serving Toronto and all of Canada with professional embroidery and printing services since 2014."
+} %}
+{% include "components/hero/hero-simple.njk" %}
+
+<section class="about-story section-light">
+  <div class="container">
+    <div class="story-content">
+      <div class="story-text">
+        <h2 class="heading-lg">Our Story</h2>
+        <p class="body-text">Founded in {{ site.business.established }}, Jiffyprints began with a simple mission: to provide businesses and individuals with high-quality custom embroidery and printing services that they could count on. What started as a small Toronto-based operation has grown into a trusted partner for customers across Canada.</p>
+        
+        <p class="body-text">Our focus has always been on embroidery excellence. We believe that embroidered designs offer unmatched durability and professional appearance, making them perfect for corporate uniforms, team apparel, and promotional items that need to withstand frequent use and washing.</p>
+        
+        <p class="body-text">Over the years, we've expanded our services to include DTF printing, DTG printing, and screen printing, but embroidery remains at the heart of what we do. Our commitment to quality, fast turnaround times, and personalized service has made us the go-to choice for businesses across Canada.</p>
+      </div>
+      
+      <div class="story-image">
+        <div class="image-placeholder">
+          <p>Company Photo</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values-section section-dark">
+  <div class="container">
+    <div class="section-header text-center mb-12">
+      <h2 class="heading-lg">Our Values</h2>
+      <p class="body-text">The principles that guide everything we do</p>
+    </div>
+    
+    <div class="values-grid">
+      <div class="value-item card-dark">
+        <div class="value-icon">⚡</div>
+        <h3 class="heading-md">Speed</h3>
+        <p class="body-text">Fast turnaround times without compromising quality. We understand that time is important to our customers.</p>
+      </div>
+      <div class="value-item card-dark">
+        <div class="value-icon">🎯</div>
+        <h3 class="heading-md">Quality</h3>
+        <p class="body-text">Professional-grade equipment and experienced team ensure consistent, high-quality results every time.</p>
+      </div>
+      <div class="value-item card-dark">
+        <div class="value-icon">🤝</div>
+        <h3 class="heading-md">Service</h3>
+        <p class="body-text">Personalized attention and direct communication with our team from start to finish.</p>
+      </div>
+      <div class="value-item card-dark">
+        <div class="value-icon">🔄</div>
+        <h3 class="heading-md">Reliability</h3>
+        <p class="body-text">Consistent delivery and dependable service that businesses can count on, project after project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experience-section section-light">
+  <div class="container">
+    <div class="experience-content">
+      <div class="experience-text">
+        <h2 class="heading-lg">Why Experience Matters</h2>
+        <p class="body-text">With over 10 years in the industry, we've seen trends come and go, but quality never goes out of style. Our experience means:</p>
+        
+        <ul class="experience-benefits">
+          <li>Expert advice on the best approach for your project</li>
+          <li>Knowledge of what works and what doesn't in embroidery</li>
+          <li>Established relationships with suppliers for consistent quality</li>
+          <li>Refined processes that ensure efficiency and accuracy</li>
+          <li>Problem-solving skills from handling thousands of projects</li>
+        </ul>
+      </div>
+      
+      <div class="stats-grid">
+        <div class="stat-item card-light">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item card-light">
+          <div class="stat-number">{{ site.business.minimumOrder }}+</div>
+          <div class="stat-label">Item Minimum</div>
+        </div>
+        <div class="stat-item card-light">
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item card-light">
+          <div class="stat-number">24hrs</div>
+          <div class="stat-label">Quote Response</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="commitment-section section-white">
+  <div class="container">
+    <div class="commitment-content">
+      <div class="commitment-text">
+        <h2 class="heading-lg">Our Commitment</h2>
+        <p class="body-text">We're committed to being your trusted partner for all your embroidery and printing needs. This means:</p>
+        
+        <div class="commitment-items">
+          <div class="commitment-item">
+            <h3 class="heading-md">Quality Guarantee</h3>
+            <p class="body-text">Every item is inspected for quality before shipping. If you're not satisfied, we'll make it right.</p>
+          </div>
+          <div class="commitment-item">
+            <h3 class="heading-md">Fair Pricing</h3>
+            <p class="body-text">Competitive, transparent pricing with no hidden fees. You know exactly what you're paying for.</p>
+          </div>
+          <div class="commitment-item">
+            <h3 class="heading-md">Clear Communication</h3>
+            <p class="body-text">Regular updates on your project status and quick responses to any questions or concerns.</p>
+          </div>
+          <div class="commitment-item">
+            <h3 class="heading-md">Continuous Improvement</h3>
+            <p class="body-text">We're always looking for ways to improve our services and stay current with industry trends.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set cta_data = {
+  title: "Ready to Work Together?",
+  description: "Experience the difference that 10+ years of expertise can make for your next embroidery or printing project.",
+  button_text: "Get Started",
+  button_link: "/quote/"
+} %}
+{% include "components/cta/cta-primary.njk" %}
+
+<style>
+.story-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.story-text p {
+  margin-bottom: 1.5rem;
+}
+
+.image-placeholder {
+  background: var(--very-light-gray);
+  border: 2px dashed var(--light-gray);
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--light-gray);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.value-item {
+  text-align: center;
+}
+
+.value-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.experience-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.experience-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.experience-benefits li {
+  padding: 0.75rem 0;
+  position: relative;
+  padding-left: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.experience-benefits li:last-child {
+  border-bottom: none;
+}
+
+.experience-benefits li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--red-accent);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--red-accent);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--medium-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.commitment-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.commitment-item h3 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .story-content,
+  .experience-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .commitment-items {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

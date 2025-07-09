@@ -1,0 +1,102 @@
+{
+  "components": {
+    "navigation": {
+      "navbar": {
+        "file": "components/navigation/navbar.njk",
+        "description": "Main site navigation with logo and menu",
+        "props": ["current_page"],
+        "variants": ["desktop", "mobile"],
+        "lines": 85
+      }
+    },
+    "hero": {
+      "hero-main": {
+        "file": "components/hero/hero-main.njk",
+        "description": "Large hero section with CTA buttons",
+        "props": ["title", "subtitle", "cta_primary", "cta_secondary"],
+        "variants": ["default", "embroidery-focused"],
+        "lines": 95
+      },
+      "hero-simple": {
+        "file": "components/hero/hero-simple.njk",
+        "description": "Simple hero for interior pages",
+        "props": ["title", "subtitle"],
+        "variants": ["default"],
+        "lines": 55
+      }
+    },
+    "cta": {
+      "cta-primary": {
+        "file": "components/cta/cta-primary.njk",
+        "description": "Primary call-to-action section",
+        "props": ["title", "description", "button_text", "button_link"],
+        "variants": ["default", "quote-focused"],
+        "lines": 65
+      }
+    },
+    "forms": {
+      "quote-form": {
+        "file": "components/forms/quote-form.njk",
+        "description": "Quote request form with file upload",
+        "props": ["form_action", "success_message"],
+        "variants": ["default", "embroidery-specific"],
+        "lines": 180
+      },
+      "contact-form": {
+        "file": "components/forms/contact-form.njk",
+        "description": "General contact form",
+        "props": ["form_action"],
+        "variants": ["default"],
+        "lines": 120
+      }
+    },
+    "content": {
+      "feature-grid": {
+        "file": "components/content/feature-grid.njk",
+        "description": "Grid layout for features/services",
+        "props": ["features", "columns"],
+        "variants": ["three-column", "four-column"],
+        "lines": 75
+      },
+      "testimonials": {
+        "file": "components/content/testimonials.njk",
+        "description": "Customer testimonials section",
+        "props": ["testimonials"],
+        "variants": ["slider", "grid"],
+        "lines": 90
+      }
+    },
+    "cards": {
+      "service-card": {
+        "file": "components/cards/service-card.njk",
+        "description": "Individual service showcase card",
+        "props": ["title", "description", "icon", "link"],
+        "variants": ["light", "dark"],
+        "lines": 60
+      },
+      "blog-card": {
+        "file": "components/cards/blog-card.njk",
+        "description": "Blog post preview card",
+        "props": ["title", "excerpt", "date", "link"],
+        "variants": ["featured", "standard"],
+        "lines": 70
+      }
+    },
+    "footer": {
+      "footer": {
+        "file": "components/footer/footer.njk",
+        "description": "Site footer with links and contact info",
+        "props": [],
+        "variants": ["default"],
+        "lines": 140
+      }
+    }
+  },
+  "last_updated": "2025-07-09",
+  "total_components": 9,
+  "guidelines": {
+    "max_lines": 1000,
+    "naming_convention": "kebab-case",
+    "required_props": ["description", "props", "variants", "lines"]
+  }
+}

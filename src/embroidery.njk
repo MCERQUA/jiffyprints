@@ -1,0 +1,297 @@
+---
+layout: layouts/page.njk
+title: "Professional Embroidery Services"
+description: "Expert embroidery services for logos, text, and custom designs. Professional-grade machines, fast turnaround, and quality guaranteed."
+---
+
+{% set embroidery_features = [
+  {
+    title: "Logo Embroidery",
+    description: "Transform your brand logo into professional embroidered designs. Perfect for corporate apparel, uniforms, and promotional items.",
+    icon: "🏢"
+  },
+  {
+    title: "Text Embroidery",
+    description: "Custom text embroidery for names, titles, and messages. Choose from various fonts, sizes, and thread colors.",
+    icon: "✍️"
+  },
+  {
+    title: "Custom Designs",
+    description: "Bring your creative vision to life with custom embroidery designs. From simple graphics to complex artwork.",
+    icon: "🎨"
+  },
+  {
+    title: "Digitizing Service",
+    description: "Professional in-house digitizing service to convert your artwork into embroidery-ready files.",
+    icon: "💻"
+  }
+] %}
+
+{% set materials = [
+  "T-Shirts & Polos",
+  "Hats & Caps",
+  "Jackets & Hoodies",
+  "Bags & Backpacks",
+  "Towels & Blankets",
+  "Uniforms & Workwear"
+] %}
+
+{% set hero_data = {
+  title: "Professional Embroidery Services",
+  subtitle: "Expert embroidery for logos, text, and custom designs with professional-grade equipment and fast turnaround times."
+} %}
+{% include "components/hero/hero-simple.njk" %}
+
+<section class="embroidery-intro section-light">
+  <div class="container">
+    <div class="intro-content">
+      <div class="intro-text">
+        <h2 class="heading-lg">Why Choose Embroidery?</h2>
+        <p class="body-text">Embroidery offers unmatched durability and professional appearance. Unlike printing, embroidered designs won't fade, crack, or peel over time. They're perfect for:</p>
+        <ul class="benefits-list">
+          <li>Corporate uniforms and professional apparel</li>
+          <li>Team jerseys and sports apparel</li>
+          <li>Promotional items and branded merchandise</li>
+          <li>High-quality gifts and awards</li>
+          <li>Items that require frequent washing</li>
+        </ul>
+      </div>
+      <div class="intro-image">
+        <div class="image-placeholder">
+          <p>Embroidery Process Image</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="embroidery-services section-white">
+  <div class="container">
+    <div class="section-header text-center mb-12">
+      <h2 class="heading-lg">Our Embroidery Services</h2>
+      <p class="body-text">Professional embroidery services using commercial-grade machines and premium threads</p>
+    </div>
+    
+    <div class="services-grid">
+      {% for feature in embroidery_features %}
+        {% set card_data = {
+          title: feature.title,
+          description: feature.description,
+          icon: feature.icon,
+          variant: "light"
+        } %}
+        {% include "components/cards/service-card.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="materials-section section-dark">
+  <div class="container">
+    <div class="section-header text-center mb-12">
+      <h2 class="heading-lg">Materials We Work With</h2>
+      <p class="body-text">Professional embroidery on a wide range of materials and garments</p>
+    </div>
+    
+    <div class="materials-grid">
+      {% for material in materials %}
+      <div class="material-item card-dark">
+        <h3 class="heading-md">{{ material }}</h3>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="process-section section-light">
+  <div class="container">
+    <div class="section-header text-center mb-12">
+      <h2 class="heading-lg">Our Embroidery Process</h2>
+      <p class="body-text">From concept to completion, we ensure quality at every step</p>
+    </div>
+    
+    <div class="process-steps">
+      <div class="step-item">
+        <div class="step-number">1</div>
+        <h3 class="heading-md">Design Review</h3>
+        <p class="body-text">We review your logo or design to ensure it's suitable for embroidery and make any necessary adjustments.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-number">2</div>
+        <h3 class="heading-md">Digitizing</h3>
+        <p class="body-text">Your design is converted into an embroidery file using our in-house digitizing expertise.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-number">3</div>
+        <h3 class="heading-md">Sample Creation</h3>
+        <p class="body-text">We create a sample to ensure perfect placement, sizing, and thread colors before full production.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-number">4</div>
+        <h3 class="heading-md">Production</h3>
+        <p class="body-text">Your order is embroidered using professional-grade machines with careful quality control.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-number">5</div>
+        <h3 class="heading-md">Quality Check</h3>
+        <p class="body-text">Every item is inspected for quality before packaging and shipping to ensure perfect results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-info section-white">
+  <div class="container">
+    <div class="pricing-content">
+      <div class="pricing-text">
+        <h2 class="heading-lg">Embroidery Pricing</h2>
+        <p class="body-text">Our embroidery pricing is based on:</p>
+        <ul class="pricing-factors">
+          <li><strong>Design complexity:</strong> Number of colors and detail level</li>
+          <li><strong>Quantity:</strong> Better rates for larger orders</li>
+          <li><strong>Garment type:</strong> Different materials may affect pricing</li>
+          <li><strong>Placement:</strong> Standard positions or custom placement</li>
+        </ul>
+        <p class="body-text">Contact us for a personalized quote based on your specific needs. We offer competitive rates with no hidden fees.</p>
+      </div>
+      <div class="pricing-cta">
+        <div class="cta-box card-light">
+          <h3 class="heading-md">Get Your Quote</h3>
+          <p class="body-text">Ready to start your embroidery project? Get a free, detailed quote today.</p>
+          <a href="/quote/" class="btn btn-primary">Get Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.embroidery-intro {
+  padding: 4rem 0;
+}
+
+.intro-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.benefits-list li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.benefits-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--red-accent);
+  font-weight: bold;
+}
+
+.image-placeholder {
+  background: var(--very-light-gray);
+  border: 2px dashed var(--light-gray);
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--light-gray);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.material-item {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.step-item {
+  text-align: center;
+}
+
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: var(--red-accent);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.pricing-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.pricing-factors {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.pricing-factors li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pricing-factors li:last-child {
+  border-bottom: none;
+}
+
+.cta-box {
+  text-align: center;
+}
+
+.cta-box h3 {
+  margin-bottom: 1rem;
+}
+
+.cta-box p {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .intro-content,
+  .pricing-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .services-grid,
+  .materials-grid,
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

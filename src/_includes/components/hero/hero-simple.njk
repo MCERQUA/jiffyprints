@@ -1,0 +1,61 @@
+{# Component: Simple Hero #}
+{# Description: Simple hero for interior pages #}
+{# Props: title, subtitle #}
+{# Variants: default #}
+{# Lines: 55 #}
+
+{% set component_data = {
+  title: hero_data.title or title or "Page Title",
+  subtitle: hero_data.subtitle or subtitle or "Page description",
+  variant: hero_data.variant or variant or "default"
+} %}
+
+<section class="hero-simple variant-{{ component_data.variant }}">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="heading-lg">{{ component_data.title }}</h1>
+            {% if component_data.subtitle %}
+            <p class="hero-subtitle">{{ component_data.subtitle }}</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<style>
+.hero-simple {
+    background: var(--white);
+    padding: 4rem 0 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.hero-simple::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--red-accent), transparent);
+    transform: translateX(-50%);
+}
+
+.hero-simple .hero-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-simple .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--medium-gray);
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .hero-simple {
+        padding: 3rem 0 1.5rem;
+    }
+}
+</style>
