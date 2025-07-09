@@ -1,0 +1,295 @@
+<!--
+Component: Instagram Feed
+Description: Modern Instagram feed display with grid layout and hover effects
+Props: 
+  - instagram_handle: Instagram username without @
+  - title: Section title
+  - subtitle: Section subtitle
+  - max_posts: Number of posts to display (default: 6)
+  - variant: Style variant (default, compact)
+-->
+
+{% set instagram_handle = instagram_handle or "printsinajiffy" %}
+{% set title = title or "Follow Our Work" %}
+{% set subtitle = subtitle or "See our latest embroidery and printing projects on Instagram" %}
+{% set max_posts = max_posts or 6 %}
+{% set variant = variant or "default" %}
+
+<section class="component-instagram-feed variant-{{ variant }}">
+  <div class="container">
+    <div class="instagram-header">
+      <h2 class="instagram-title">{{ title }}</h2>
+      <p class="instagram-subtitle">{{ subtitle }}</p>
+      <a href="https://instagram.com/{{ instagram_handle }}" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="instagram-handle">
+        <svg class="instagram-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        @{{ instagram_handle }}
+      </a>
+    </div>
+
+    <div class="instagram-grid" id="instagram-grid-{{ instagram_handle }}">
+      <!-- Instagram posts will be loaded here -->
+      <div class="instagram-post instagram-placeholder">
+        <div class="post-image-placeholder">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </div>
+        <div class="post-overlay">
+          <span>Loading Instagram posts...</span>
+        </div>
+      </div>
+      
+      <!-- Additional placeholder posts -->
+      {% for i in range(1, max_posts) %}
+      <div class="instagram-post instagram-placeholder" style="animation-delay: {{ i * 0.1 }}s;">
+        <div class="post-image-placeholder">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="instagram-footer">
+      <a href="https://instagram.com/{{ instagram_handle }}" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="btn btn-outline">
+        View More on Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+.component-instagram-feed {
+  padding: 4rem 0;
+  background: var(--white);
+}
+
+.variant-compact {
+  padding: 2rem 0;
+}
+
+.instagram-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.instagram-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 1rem;
+}
+
+.instagram-subtitle {
+  font-size: 1.125rem;
+  color: var(--light-gray);
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.instagram-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--accent-blue);
+  border-radius: 50px;
+  background: transparent;
+}
+
+.instagram-handle:hover {
+  background: var(--accent-blue);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.instagram-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.instagram-post {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--light-background);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.instagram-post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.instagram-placeholder {
+  background: linear-gradient(45deg, #f0f0f0, #e8e8e8);
+  animation: pulse 2s infinite;
+}
+
+.post-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--light-gray);
+}
+
+.post-image-placeholder svg {
+  width: 60px;
+  height: 60px;
+  opacity: 0.5;
+}
+
+.post-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.instagram-post:hover .post-overlay {
+  opacity: 1;
+}
+
+.post-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.instagram-footer {
+  text-align: center;
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 2px solid var(--accent-blue);
+  color: var(--accent-blue);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--accent-blue);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .component-instagram-feed {
+    padding: 3rem 0;
+  }
+  
+  .instagram-title {
+    font-size: 2rem;
+  }
+  
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .instagram-header {
+    margin-bottom: 2rem;
+  }
+  
+  .instagram-footer {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .instagram-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .instagram-title {
+    font-size: 1.75rem;
+  }
+  
+  .instagram-subtitle {
+    font-size: 1rem;
+  }
+}
+</style>
+
+<script>
+// Instagram feed functionality would go here
+// Note: Due to Instagram's API restrictions, this would typically require:
+// 1. Instagram Basic Display API integration
+// 2. Server-side token management
+// 3. Or a third-party service like Instafeed.js
+
+// For now, we'll show placeholder content with a note about implementation
+document.addEventListener('DOMContentLoaded', function() {
+  const grid = document.getElementById('instagram-grid-{{ instagram_handle }}');
+  if (grid) {
+    // Add a note about Instagram integration
+    setTimeout(() => {
+      const placeholders = grid.querySelectorAll('.instagram-placeholder .post-overlay span');
+      placeholders.forEach((span, index) => {
+        if (index === 0) {
+          span.textContent = 'Instagram integration ready for setup';
+        } else {
+          span.textContent = 'Sample post ' + (index + 1);
+        }
+      });
+    }, 1000);
+  }
+});
+</script>
