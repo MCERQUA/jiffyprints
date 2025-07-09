@@ -2,7 +2,7 @@
 {# Description: Main site navigation with logo and menu #}
 {# Props: current_page #}
 {# Variants: desktop, mobile #}
-{# Lines: 90+ #}
+{# Lines: 60+ #}
 
 {% set current = page.url %}
 
@@ -25,7 +25,7 @@
         <!-- Mobile: Phone Number and CTA + Menu -->
         <div class="mobile-header-right">
             <a href="tel:{{ site.phone }}" class="mobile-phone">{{ site.phone }}</a>
-            <a href="{{ navigation.cta.url }}" class="btn btn-secondary mobile-cta-btn">
+            <a href="{{ navigation.cta.url }}" class="mobile-cta-btn">
                 {{ navigation.cta.text }}
             </a>
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
@@ -56,107 +56,6 @@
         </ul>
     </div>
 </nav>
-
-<style>
-.nav-link-active {
-    color: var(--black) !important;
-    font-weight: 600;
-}
-
-.nav-link-active::before {
-    width: 100% !important;
-}
-
-.mobile-header-right {
-    display: none;
-    align-items: center;
-    gap: 1rem;
-}
-
-.mobile-cta-btn {
-    display: none;
-}
-
-.desktop-cta-btn {
-    display: inline-flex;
-}
-
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    background: none;
-    border: none;
-    cursor: pointer;
-    gap: 4px;
-    padding: 8px;
-}
-
-.mobile-menu-toggle span {
-    width: 25px;
-    height: 3px;
-    background: var(--black);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.mobile-menu {
-    display: none;
-    position: relative;
-    z-index: 1000;
-}
-
-.mobile-nav-links {
-    list-style: none;
-    padding: 1rem 0;
-    margin: 0;
-}
-
-.mobile-nav-links li {
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .desktop-cta-btn {
-        display: none;
-    }
-    
-    .mobile-header-right {
-        display: flex;
-    }
-    
-    .mobile-cta-btn {
-        display: inline-flex;
-        padding: 0.5rem 1rem;
-        font-size: 0.875rem;
-    }
-    
-    .mobile-menu-toggle {
-        display: flex;
-    }
-    
-    .mobile-menu.active {
-        display: block !important;
-    }
-}
-
-/* Ensure proper spacing and alignment */
-.nav-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-}
-
-@media (max-width: 768px) {
-    .nav-content {
-        gap: 1rem;
-    }
-}
-</style>
 
 <script>
 function toggleMobileMenu() {
