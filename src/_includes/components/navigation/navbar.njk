@@ -24,10 +24,8 @@
         
         <!-- Mobile: Phone Number and CTA + Menu -->
         <div class="mobile-header-right">
-            <a href="tel:{{ site.phone }}" class="mobile-phone">{{ site.phone }}</a>
-            <a href="{{ navigation.cta.url }}" class="mobile-cta-btn">
-                {{ navigation.cta.text }}
-            </a>
+            <a href="tel:{{ site.phone }}\" class="mobile-phone">{{ site.phone }}</a>
+            <a href="{{ navigation.cta.url }}" class="cta-btn">Quote</a>
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
                 <span></span>
                 <span></span>
@@ -36,9 +34,7 @@
         </div>
         
         <!-- Desktop CTA Button -->
-        <a href="{{ navigation.cta.url }}" class="{{ navigation.cta.class }} desktop-cta-btn">
-            {{ navigation.cta.text }}
-        </a>
+        <a href="{{ navigation.cta.url }}" class="cta-btn desktop-only">Quote</a>
     </div>
     
     <!-- Mobile Navigation Menu -->
