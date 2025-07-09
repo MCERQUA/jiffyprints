@@ -1,0 +1,285 @@
+{
+  "project": {
+    "name": "Jiffyprints",
+    "description": "Website for Jiffyprints - Fast, reliable printing services",
+    "repository": "https://github.com/MCERQUA/jiffyprints",
+    "owner": "MCERQUA",
+    "type": "Business Website - Custom Embroidery & Printing Services",
+    "industry": "Embroidery and Printing Services",
+    "created_at": "2025-07-09T18:20:29Z",
+    "last_updated": "2025-07-09T19:47:30Z",
+    "default_branch": "main"
+  },
+  "business_context": {
+    "company_name": "Jiffyprints",
+    "primary_service": "Custom embroidery services (logos, text, designs)",
+    "secondary_services": ["DTF printing", "DTG printing", "screen printing"],
+    "target_market": "Businesses, teams, organizations in Toronto with national reach",
+    "value_proposition": "Fast turnaround, quality, personalized service, low minimums (6 items)",
+    "service_split": "60% embroidery content, 40% general printing"
+  },
+  "technology_stack": {
+    "framework": "11ty (Eleventy) v3.1.2 - Static Site Generator",
+    "template_engine": "Nunjucks (.njk)",
+    "package_manager": "npm",
+    "node_version": "18",
+    "deployment": {
+      "platform": "Netlify",
+      "build_command": "npm run build",
+      "publish_directory": "_site",
+      "form_handling": "Netlify Forms with spam protection"
+    },
+    "dependencies": {
+      "@11ty/eleventy": "^3.1.2",
+      "@11ty/eleventy-navigation": "^1.0.4", 
+      "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1"
+    },
+    "build_tools": {
+      "static_site_generator": "Eleventy",
+      "css": "Custom CSS (style.css)",
+      "javascript": "Vanilla JS",
+      "watch_targets": ["src/assets/css/"]
+    }
+  },
+  "project_structure": {
+    "root_files": [
+      ".eleventy.js",
+      "package.json",
+      "package-lock.json", 
+      "netlify.toml",
+      "CLAUDE.md",
+      "GIT-PULL-REPO.bat",
+      "GIT-UPDATE-REPO.bat",
+      "git_config.txt"
+    ],
+    "directories": {
+      "src/": "Source code directory",
+      "_site/": "Generated site output",
+      "docs/": "Documentation",
+      "node_modules/": "Node.js dependencies",
+      ".claude/": "Claude Code configuration"
+    },
+    "src_structure": {
+      "_data/": ["site.js", "navigation.js", "components.json"],
+      "_includes/": {
+        "layouts/": ["base.njk", "page.njk"],
+        "components/": "Modular component system"
+      },
+      "assets/": {
+        "css/": ["style.css"],
+        "js/": "JavaScript files"
+      },
+      "blog/": "Blog system directory",
+      "pages": [
+        "index.njk (Homepage)",
+        "embroidery.njk (Primary service)",
+        "printing.njk (Secondary services)",
+        "quote.njk (Lead generation)",
+        "about.njk (Company info)",
+        "contact.njk (Contact forms)"
+      ]
+    }
+  },
+  "eleventy_configuration": {
+    "input_directory": "src",
+    "output_directory": "_site",
+    "includes_directory": "_includes",
+    "data_directory": "_data",
+    "template_formats": ["njk", "md", "html"],
+    "html_template_engine": "njk",
+    "path_prefix": "/",
+    "passthrough_copies": [
+      "src/assets",
+      "src/admin"
+    ],
+    "plugins": [
+      "@11ty/eleventy-plugin-syntaxhighlight",
+      "@11ty/eleventy-navigation"
+    ],
+    "collections": {
+      "posts": "Blog posts from src/blog/posts/**/*.md"
+    },
+    "filters": {
+      "dateDisplay": "Format dates for blog posts",
+      "excerpt": "Create excerpts (150 char max)"
+    }
+  },
+  "netlify_configuration": {
+    "build_settings": {
+      "publish": "_site",
+      "command": "npm run build",
+      "node_version": "18"
+    },
+    "redirects": [
+      "/admin/* -> /admin/index.html (200)",
+      "/blog -> /blog/ (301)",
+      "/embroidery -> /embroidery/ (301)", 
+      "/printing -> /printing/ (301)",
+      "/quote -> /quote/ (301)",
+      "/about -> /about/ (301)",
+      "/contact -> /contact/ (301)"
+    ],
+    "security_headers": {
+      "X-Frame-Options": "DENY",
+      "X-XSS-Protection": "1; mode=block",
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin"
+    },
+    "cache_control": {
+      "assets": "public, max-age=31536000"
+    },
+    "forms": {
+      "spam_protection": true
+    }
+  },
+  "development_commands": {
+    "install": "npm install",
+    "development": "npm run dev (eleventy --serve)",
+    "build": "npm run build (eleventy)",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "pages_and_priority": {
+    "page_priority": [
+      "1. Home (index.njk) - First impression and overview",
+      "2. Embroidery (embroidery.njk) - Primary service (highest priority)",
+      "3. Quote (quote.njk) - Lead generation",
+      "4. Blog (blog/) - Content marketing and SEO",
+      "5. Contact (contact.njk) - Customer communication",
+      "6. About (about.njk) - Trust building",
+      "7. Printing (printing.njk) - Secondary services"
+    ],
+    "implemented_pages": {
+      "index.njk": "Homepage - 6,462 bytes",
+      "embroidery.njk": "Embroidery services - 8,692 bytes",
+      "printing.njk": "Printing services - 12,982 bytes",
+      "quote.njk": "Quote form - 5,966 bytes", 
+      "about.njk": "About page - 8,770 bytes",
+      "contact.njk": "Contact page - 7,461 bytes"
+    }
+  },
+  "component_system": {
+    "registry_file": "src/_data/components.json",
+    "component_rules": {
+      "max_lines": 1000,
+      "target_lines": "50-200",
+      "naming_convention": "kebab-case",
+      "variants": "Support multiple variations per component",
+      "props": "Standardized prop system"
+    },
+    "component_structure": {
+      "location": "src/_includes/components/",
+      "template": "Nunjucks with component metadata headers",
+      "css_classes": "component-[name] variant-[variant]"
+    }
+  },
+  "styling_and_assets": {
+    "css": {
+      "main_stylesheet": "src/assets/css/style.css (10,780 bytes)",
+      "approach": "Custom CSS, no framework",
+      "responsive": true,
+      "watch_enabled": true
+    },
+    "javascript": {
+      "location": "src/assets/js/",
+      "approach": "Vanilla JavaScript"
+    },
+    "images": "Likely in src/assets/ (not yet populated)"
+  },
+  "data_management": {
+    "site_config": "src/_data/site.js (960 bytes)",
+    "navigation": "src/_data/navigation.js (630 bytes)",
+    "components_registry": "src/_data/components.json (3,259 bytes)",
+    "blog_posts": "Managed via collections in .eleventy.js"
+  },
+  "content_strategy": {
+    "embroidery_focus": "Primary service - 60% of content",
+    "blog_categories": [
+      "Embroidery Tips",
+      "Design Ideas", 
+      "Industry Insights",
+      "Customer Stories"
+    ],
+    "seo_focus": "Embroidery-related keywords, local Toronto SEO",
+    "user_journey": "Home → Embroidery → Blog → Quote → Contact"
+  },
+  "security_and_performance": {
+    "security_headers": "Comprehensive security headers via Netlify",
+    "form_protection": "Netlify spam protection",
+    "cache_strategy": "1-year cache for assets",
+    "ssl": "Managed by Netlify",
+    "performance": "Static site generation for fast loading"
+  },
+  "git_workflow": {
+    "batch_files": [
+      "GIT-PULL-REPO.bat (2,675 bytes)",
+      "GIT-UPDATE-REPO.bat (721 bytes)"
+    ],
+    "config": "git_config.txt (43 bytes)",
+    "branch_strategy": "main branch deployment"
+  },
+  "development_status": {
+    "current_state": "ACTIVE DEVELOPMENT",
+    "implementation_status": "Core pages implemented with Eleventy",
+    "pages_completed": 6,
+    "blog_system": "Configured but needs content",
+    "component_system": "Framework in place",
+    "cms_integration": "Netlify CMS ready (admin/ config)"
+  },
+  "documentation": {
+    "claude_guidance": "CLAUDE.md (5,525 bytes) - Comprehensive development guide",
+    "component_guidelines": "Detailed in CLAUDE.md",
+    "business_context": "Documented in CLAUDE.md",
+    "architecture_overview": "Complete tech stack documentation"
+  },
+  "deployment_and_hosting": {
+    "hosting": "Netlify",
+    "domain": "TBD - not specified in config",
+    "ssl": "Automatic via Netlify",
+    "build_process": "Automatic on git push",
+    "admin_interface": "/admin/ route configured"
+  },
+  "maintenance_considerations": {
+    "dependencies": "Keep Eleventy and plugins updated",
+    "content_updates": "Via Netlify CMS or direct file editing",
+    "performance_monitoring": "Netlify analytics available",
+    "security": "Headers configured, forms protected",
+    "backups": "Git repository serves as backup"
+  },
+  "editing_guidelines": {
+    "file_structure": "Follow established src/ organization",
+    "component_development": "Use component registry and naming conventions",
+    "styling": "Add to src/assets/css/style.css",
+    "content_updates": "Edit .njk files directly or use CMS",
+    "new_pages": "Create in src/ with appropriate layout",
+    "navigation": "Update src/_data/navigation.js",
+    "builds": "Test locally with 'npm run dev' before pushing"
+  },
+  "important_notes": {
+    "embroidery_priority": "Embroidery is the PRIMARY service - prioritize in development",
+    "component_limits": "Keep components under 1000 lines",
+    "registry_updates": "Always update components.json when adding components",
+    "netlify_forms": "Use Netlify form handling for contact/quote forms",
+    "responsive_design": "Ensure mobile responsiveness for all components",
+    "seo_optimization": "Focus on embroidery and local Toronto keywords"
+  },
+  "next_development_tasks": {
+    "immediate": [
+      "Review and test existing pages",
+      "Populate blog with initial content",
+      "Verify all forms are working", 
+      "Test responsive design across devices"
+    ],
+    "short_term": [
+      "Develop component library",
+      "Implement CMS content management",
+      "Add portfolio/gallery sections",
+      "Optimize for local SEO"
+    ],
+    "long_term": [
+      "Online ordering system",
+      "Customer portal",
+      "Integration with printing workflow",
+      "Advanced analytics setup"
+    ]
+  }
+}
