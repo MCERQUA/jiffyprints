@@ -4,7 +4,7 @@ module.exports = {
   url: "https://jiffyprints.netlify.app",
   author: "Jiffyprints Team",
   email: "info@jiffyprints.com",
-  phone: "(416) 555-0123",
+  phone: "(437) 436-4141",
   address: {
     street: "123 Business Street",
     city: "Toronto",
