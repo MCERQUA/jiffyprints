@@ -13,8 +13,8 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Stylesheet with cache busting -->
+    <link rel="stylesheet" href="/assets/css/style.css?v={{ Date.now() }}">
     
     <!-- Meta tags for SEO -->
     <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ site.title }}">
