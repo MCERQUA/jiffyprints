@@ -1,9 +1,9 @@
 module.exports = {
-  title: "Jiffyprints",
+  title: "PrintsinAJiffy",
   description: "Professional embroidery and custom printing services in Toronto. Fast turnaround, quality guaranteed, low minimums starting at 6 items.",
   url: "https://jiffyprints.netlify.app",
-  author: "Jiffyprints Team",
-  email: "info@jiffyprints.com",
+  author: "PrintsinAJiffy Team",
+  email: "info@printsinajiffy.com",
   phone: "(437) 436-4141",
   address: {
     street: "123 Business Street",
@@ -13,9 +13,9 @@ module.exports = {
     country: "Canada"
   },
   social: {
-    facebook: "https://facebook.com/jiffyprints",
-    instagram: "https://instagram.com/jiffyprints",
-    linkedin: "https://linkedin.com/company/jiffyprints"
+    facebook: "https://facebook.com/printsinajiffy",
+    instagram: "https://instagram.com/printsinajiffy",
+    linkedin: "https://linkedin.com/company/printsinajiffy"
   },
   services: {
     primary: "Embroidery",
