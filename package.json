@@ -1,7 +1,7 @@
 {
   "name": "jiffyprints",
   "version": "1.0.0",
-  "description": "",
+  "description": "Professional embroidery and custom printing services website",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -15,17 +15,30 @@
     "type": "git",
     "url": "git+https://github.com/MCERQUA/jiffyprints.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "embroidery",
+    "printing", 
+    "custom",
+    "toronto",
+    "eleventy",
+    "netlify"
+  ],
+  "author": "Jiffyprints",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/MCERQUA/jiffyprints/issues"
   },
   "homepage": "https://github.com/MCERQUA/jiffyprints#readme",
+  "dependencies": {
+    "luxon": "^3.4.4"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-navigation": "^1.0.4",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
