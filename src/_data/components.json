@@ -82,6 +82,15 @@
         "lines": 70
       }
     },
+    "social": {
+      "instagram-feed": {
+        "file": "components/social/instagram-feed.njk",
+        "description": "Modern Instagram feed display with grid layout and hover effects",
+        "props": ["instagram_handle", "title", "subtitle", "max_posts", "variant"],
+        "variants": ["default", "compact"],
+        "lines": 285
+      }
+    },
     "footer": {
       "footer": {
         "file": "components/footer/footer.njk",
@@ -93,7 +102,7 @@
     }
   },
   "last_updated": "2025-07-09",
-  "total_components": 9,
+  "total_components": 10,
   "guidelines": {
     "max_lines": 1000,
     "naming_convention": "kebab-case",
