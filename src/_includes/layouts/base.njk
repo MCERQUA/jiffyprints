@@ -13,6 +13,47 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Critical inline CSS for navbar -->
+    <style>
+        :root {
+            --black: #000000;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #404040;
+            --light-gray: #a0a0a0;
+            --very-light-gray: #f5f5f5;
+            --white: #ffffff;
+            --red-accent: #dc2626;
+        }
+        
+        /* Critical navbar styles to prevent flash of unstyled content */
+        .navbar {
+            background: #404040 !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        .logo {
+            color: #a0a0a0 !important;
+        }
+        
+        .nav-link {
+            color: #a0a0a0 !important;
+        }
+        
+        .cta-btn {
+            background: #000000 !important;
+            color: #ffffff !important;
+        }
+        
+        .mobile-phone {
+            color: #a0a0a0 !important;
+        }
+        
+        .mobile-menu-toggle span {
+            background: #a0a0a0 !important;
+        }
+    </style>
+    
     <!-- Stylesheet with cache busting -->
     <link rel="stylesheet" href="/assets/css/style.css?v={{ Date.now() }}">
     
