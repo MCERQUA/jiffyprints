@@ -53,10 +53,11 @@
     "content": {
       "feature-grid": {
         "file": "components/content/feature-grid.njk",
-        "description": "Grid layout for features/services",
+        "description": "Grid layout for features/services with glassmorphism effects",
         "props": ["features", "columns"],
         "variants": ["three-column", "four-column"],
-        "lines": 75
+        "lines": 145,
+        "features": ["enhanced_padding", "glassmorphism_hover", "glass_reflection", "improved_spacing"]
       },
       "testimonials": {
         "file": "components/content/testimonials.njk",
@@ -69,10 +70,11 @@
     "cards": {
       "service-card": {
         "file": "components/cards/service-card.njk",
-        "description": "Individual service showcase card",
+        "description": "Individual service showcase card with glassmorphism effects",
         "props": ["title", "description", "icon", "link"],
         "variants": ["light", "dark"],
-        "lines": 60
+        "lines": 135,
+        "features": ["enhanced_padding", "glassmorphism_hover", "glass_reflection", "improved_spacing", "dark_variant_support"]
       },
       "blog-card": {
         "file": "components/cards/blog-card.njk",
@@ -103,9 +105,27 @@
   },
   "last_updated": "2025-07-09",
   "total_components": 10,
+  "enhanced_components": ["feature-grid", "service-card"],
+  "glassmorphism_features": {
+    "enabled": true,
+    "components": ["feature-grid", "service-card"],
+    "effects": [
+      "backdrop-filter blur",
+      "glass reflection on hover",
+      "enhanced shadows",
+      "improved padding",
+      "smooth transitions"
+    ]
+  },
   "guidelines": {
     "max_lines": 1000,
     "naming_convention": "kebab-case",
-    "required_props": ["description", "props", "variants", "lines"]
+    "required_props": ["description", "props", "variants", "lines"],
+    "enhanced_styling": {
+      "glassmorphism": "Modern glass effects with backdrop-filter",
+      "padding": "Enhanced spacing with 3rem+ padding",
+      "hover_effects": "Smooth transform and shadow transitions",
+      "accessibility": "Proper contrast and focus states"
+    }
   }
 }
