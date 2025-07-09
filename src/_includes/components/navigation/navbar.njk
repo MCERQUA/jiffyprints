@@ -2,7 +2,7 @@
 {# Description: Main site navigation with logo and menu #}
 {# Props: current_page #}
 {# Variants: desktop, mobile #}
-{# Lines: 85 #}
+{# Lines: 90+ #}
 
 {% set current = page.url %}
 
@@ -22,20 +22,26 @@
             {% endfor %}
         </ul>
         
-        <!-- CTA Button -->
-        <a href="{{ navigation.cta.url }}" class="{{ navigation.cta.class }}">
+        <!-- Mobile: Phone Number and CTA + Menu -->
+        <div class="mobile-header-right">
+            <a href="tel:{{ site.phone }}" class="mobile-phone">{{ site.phone }}</a>
+            <a href="{{ navigation.cta.url }}" class="{{ navigation.cta.class }} mobile-cta-btn">
+                {{ navigation.cta.text }}
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Desktop CTA Button -->
+        <a href="{{ navigation.cta.url }}" class="{{ navigation.cta.class }} desktop-cta-btn">
             {{ navigation.cta.text }}
         </a>
-        
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </div>
     
-    <!-- Mobile Navigation -->
+    <!-- Mobile Navigation Menu -->
     <div class="mobile-menu">
         <ul class="mobile-nav-links">
             {% for item in navigation.primary %}
@@ -46,11 +52,6 @@
                 </a>
             </li>
             {% endfor %}
-            <li class="mobile-cta">
-                <a href="{{ navigation.cta.url }}" class="{{ navigation.cta.class }}">
-                    {{ navigation.cta.text }}
-                </a>
-            </li>
         </ul>
     </div>
 </nav>
@@ -65,6 +66,32 @@
     width: 100% !important;
 }
 
+.mobile-header-right {
+    display: none;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mobile-phone {
+    color: var(--medium-gray);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-phone:hover {
+    color: var(--red);
+}
+
+.mobile-cta-btn {
+    display: none;
+}
+
+.desktop-cta-btn {
+    display: inline-flex;
+}
+
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -72,6 +99,7 @@
     border: none;
     cursor: pointer;
     gap: 4px;
+    padding: 8px;
 }
 
 .mobile-menu-toggle span {
@@ -84,8 +112,8 @@
 
 .mobile-menu {
     display: none;
-    background: var(--white);
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background: #2a2a2a; /* DARK GREY BACKGROUND */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: var(--shadow-medium);
 }
 
@@ -97,7 +125,7 @@
 .mobile-nav-link {
     display: block;
     padding: 0.75rem 1rem;
-    color: var(--medium-gray);
+    color: #cccccc; /* LIGHT GREY TEXT */
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -105,17 +133,27 @@
 
 .mobile-nav-link:hover,
 .mobile-nav-link-active {
-    color: var(--black);
-    background: var(--very-light-gray);
-}
-
-.mobile-cta {
-    padding: 1rem;
+    color: var(--white); /* WHITE ON HOVER/ACTIVE */
+    background: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+    }
+    
+    .desktop-cta-btn {
+        display: none;
+    }
+    
+    .mobile-header-right {
+        display: flex;
+    }
+    
+    .mobile-cta-btn {
+        display: inline-flex;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
     }
     
     .mobile-menu-toggle {
@@ -124,6 +162,20 @@
     
     .mobile-menu.active {
         display: block;
+    }
+}
+
+/* Ensure proper spacing and alignment */
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .nav-content {
+        gap: 1rem;
     }
 }
 </style>
