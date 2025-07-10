@@ -6,22 +6,27 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileMenu = document.querySelector('.mobile-menu');
   
   if (mobileMenuToggle && mobileMenu) {
-    mobileMenuToggle.addEventListener('click', function() {
-      mobileMenu.classList.toggle('active');
-      mobileMenuToggle.classList.toggle('active');
+    // Remove any existing event listeners
+    const newToggle = mobileMenuToggle.cloneNode(true);
+    mobileMenuToggle.parentNode.replaceChild(newToggle, mobileMenuToggle);
+    
+    // Add click event listener
+    newToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
       
-      // Animate hamburger menu
-      const spans = mobileMenuToggle.querySelectorAll('span');
-      spans.forEach((span, index) => {
-        if (mobileMenuToggle.classList.contains('active')) {
-          if (index === 0) span.style.transform = 'rotate(45deg) translate(6px, 6px)';
-          if (index === 1) span.style.opacity = '0';
-          if (index === 2) span.style.transform = 'rotate(-45deg) translate(6px, -6px)';
-        } else {
-          span.style.transform = 'none';
-          span.style.opacity = '1';
-        }
-      });
+      console.log('Mobile menu toggle clicked'); // Debug log
+      
+      mobileMenu.classList.toggle('active');
+      newToggle.classList.toggle('active');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!newToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+        newToggle.classList.remove('active');
+      }
     });
   }
   
@@ -29,15 +34,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', function() {
-      mobileMenu.classList.remove('active');
-      mobileMenuToggle.classList.remove('active');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
       
-      // Reset hamburger menu
-      const spans = mobileMenuToggle.querySelectorAll('span');
-      spans.forEach(span => {
-        span.style.transform = 'none';
-        span.style.opacity = '1';
-      });
+      if (mobileMenu && mobileMenuToggle) {
+        mobileMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      }
     });
   });
 });
