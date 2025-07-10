@@ -129,6 +129,16 @@ description: "Professional embroidery and custom printing services in Toronto. F
   </div>
 </section>
 
+{# Instagram Feed Section #}
+{% set instagram_data = {
+  instagram_handle: "printsinajiffy",
+  title: "Follow Our Work",
+  subtitle: "See our latest embroidery and printing projects on Instagram",
+  max_posts: 6,
+  variant: "default"
+} %}
+{% include "components/social/instagram-feed.njk" %}
+
 {% set cta_data = {
   title: "Ready to Start Your Project?",
   description: "Get a free quote today and see how we can bring your vision to life with professional embroidery and printing services.",
