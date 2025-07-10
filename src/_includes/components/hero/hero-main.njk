@@ -2,7 +2,7 @@
 {# Description: Large hero section with CTA buttons #}
 {# Props: title, subtitle, cta_primary, cta_secondary #}
 {# Variants: default, embroidery-focused #}
-{# Lines: 95 #}
+{# Lines: 125 #}
 
 {% set component_data = {
   title: hero_data.title or title or "Professional Embroidery & Custom Printing",
@@ -13,13 +13,14 @@
 } %}
 
 <section class="hero-main variant-{{ component_data.variant }}">
+    <div class="hero-background-overlay"></div>
     <div class="container">
         <div class="hero-content">
             {% if component_data.variant == "embroidery-focused" %}
-                <h1 class="heading-xl">{{ component_data.title | default("Expert Embroidery Services in Toronto") }}</h1>
+                <h1 class="heading-xl hero-title">{{ component_data.title | default("Expert Embroidery Services in Toronto") }}</h1>
                 <p class="hero-subtitle">{{ component_data.subtitle | default("Professional logo embroidery, custom designs, and fast turnaround times. Serving businesses across Canada with quality you can trust.") }}</p>
             {% else %}
-                <h1 class="heading-xl">{{ component_data.title }}</h1>
+                <h1 class="heading-xl hero-title">{{ component_data.title }}</h1>
                 <p class="hero-subtitle">{{ component_data.subtitle }}</p>
             {% endif %}
             
@@ -52,10 +53,23 @@
 
 <style>
 .hero-main {
-    background: linear-gradient(135deg, var(--very-light-gray) 0%, var(--white) 100%);
+    background-image: url('/assets/images/hero.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 6rem 0 4rem;
     position: relative;
     overflow: hidden;
+}
+
+.hero-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(245, 245, 245, 0.9) 0%, rgba(255, 255, 255, 0.85) 100%);
+    z-index: 1;
 }
 
 .hero-main::before {
@@ -68,6 +82,7 @@
     background: linear-gradient(45deg, transparent, var(--red-glow-subtle));
     opacity: 0.5;
     transform: skewX(-15deg);
+    z-index: 2;
 }
 
 .hero-content {
@@ -75,7 +90,12 @@
     max-width: 800px;
     margin: 0 auto;
     position: relative;
-    z-index: 2;
+    z-index: 3;
+}
+
+.hero-title {
+    color: var(--black);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero-subtitle {
@@ -83,6 +103,7 @@
     color: var(--medium-gray);
     margin-bottom: 2.5rem;
     line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .hero-cta {
@@ -102,6 +123,10 @@
 
 .highlight-item {
     text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
 }
 
 .highlight-item strong {
