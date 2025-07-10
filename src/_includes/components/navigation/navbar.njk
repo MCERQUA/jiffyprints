@@ -26,7 +26,7 @@
         <div class="mobile-header-right">
             <a href="tel:{{ site.phone }}" class="mobile-phone">{{ site.phone }}</a>
             <a href="{{ navigation.cta.url }}" class="cta-btn">Quote</a>
-            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -43,8 +43,7 @@
             {% for item in navigation.primary %}
             <li>
                 <a href="{{ item.url }}" 
-                   class="mobile-nav-link{% if current == item.url %} mobile-nav-link-active{% endif %}"
-                   onclick="closeMobileMenu()">
+                   class="mobile-nav-link{% if current == item.url %} mobile-nav-link-active{% endif %}">
                     {{ item.text }}
                 </a>
             </li>
@@ -52,31 +51,3 @@
         </ul>
     </div>
 </nav>
-
-<script>
-function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const toggleButton = document.querySelector('.mobile-menu-toggle');
-    
-    mobileMenu.classList.toggle('active');
-    toggleButton.classList.toggle('active');
-}
-
-function closeMobileMenu() {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const toggleButton = document.querySelector('.mobile-menu-toggle');
-    
-    mobileMenu.classList.remove('active');
-    toggleButton.classList.remove('active');
-}
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(event) {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const navbar = document.querySelector('.navbar');
-    
-    if (!navbar.contains(event.target) && mobileMenu.classList.contains('active')) {
-        closeMobileMenu();
-    }
-});
-</script>
