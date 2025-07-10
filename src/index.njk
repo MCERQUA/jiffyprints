@@ -58,7 +58,7 @@ description: "Professional embroidery and custom printing services in Toronto. F
 } %}
 {% include "components/hero/hero-main.njk" %}
 
-<section class="services-section section-light">
+<section class="services-section section-light-grey">
   <div class="container">
     <div class="section-header text-center mb-12">
       <h2 class="heading-lg">Our Services</h2>
@@ -149,6 +149,23 @@ description: "Professional embroidery and custom printing services in Toronto. F
 {% include "components/cta/cta-primary.njk" %}
 
 <style>
+/* Light grey section background */
+.section-light-grey {
+  background: var(--very-light-gray);
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-light-grey::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
